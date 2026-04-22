@@ -55,7 +55,9 @@ class SpatialQwen2VL(nn.Module):
         # Resize token table to include new <obj_N> tokens
         self.vlm.resize_token_embeddings(len(self.tokenizer))
 
-        hidden_size = self.vlm.config.hidden_size
+        cfg = self.vlm.config
+        hidden_size = getattr(cfg, "hidden_size",
+                      getattr(getattr(cfg, "text_config", cfg), "hidden_size", 3584))
         self.position_encoder = get_position_encoder(hidden_size)
 
         # Freeze base model
