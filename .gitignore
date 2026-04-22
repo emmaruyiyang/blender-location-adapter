@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 大文件：Blender 场景和图片数据集（用 Google Drive / HuggingFace Dataset 单独存）
+*.blend
+sample/imagefolder/
+sample/截屏*/
+
+# 模型权重和 checkpoint
+checkpoints/
+*.pt
+*.bin
+*.safetensors
+
+# macOS
+.DS_Store
+
+# 文档草稿（Word 临时锁定文件）
+~$*
